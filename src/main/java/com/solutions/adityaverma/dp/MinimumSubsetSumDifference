@@ -1,0 +1,30 @@
+{1,6,11,5}
+Find min difference between two partitions S1 and S2
+
+Sum = 23
+We try to divide it into equal partition. So minimum TARGET difference can be 0 or 1.
+here -
+
+23/2 = 11
+23 - 11 = 12
+So , 12 + 11 = 23
+
+We want to find all those subset sum upto 11 that can be achieved in the set
+
+We take the last True entry of the last row. Thats the closest to 11 that we can achieve.
+Here we can achieve 11. So min difference is (23 - 11) - 11 = 23 - 2*11 = 1
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+For {1,2,7}
+
+Sum = 10
+equal partiion = 5
+TARGET sum is 5
+
+The best we can do is a target sum 3 along with 1 and 2 (cant do 4 and 5).
+So 10 - 2*3 = 4 is the min difference
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
