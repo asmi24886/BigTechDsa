@@ -1,4 +1,4 @@
-package com.solutions.adityaverma.dp;
+package com.solutions.adityaverma.dp.knapsack01;
 
 public class CountOfSubsetSum {
 

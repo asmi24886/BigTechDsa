@@ -1,4 +1,4 @@
-package com.solutions.adityaverma.dp.LC416;
+package com.solutions.adityaverma.dp.knapsack01.LC416;
 
 import java.util.Arrays;
 

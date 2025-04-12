@@ -1,4 +1,4 @@
-package com.solutions.adityaverma.dp.LC494;
+package com.solutions.adityaverma.dp.knapsack01.LC494;
 
 import java.util.Arrays;
 import java.util.stream.IntStream;
