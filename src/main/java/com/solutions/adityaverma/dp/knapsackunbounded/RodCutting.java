@@ -3,6 +3,8 @@ package com.solutions.adityaverma.dp.knapsackunbounded;
 /**
  * Techdose - https://www.youtube.com/watch?v=nYJDp0Hj7M4
  * Unbounded Knapsack
+ *
+ * any state reachable through dp[i-1][...] is also reachable (and possibly better) through dp[i][...]
  */
 public class RodCutting {
 

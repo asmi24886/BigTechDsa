@@ -1,0 +1,20 @@
+Initial intuition is to solve it like every other dynamic programning or even a subsequence pattern.
+This is a solid tricky problem.
+
+[2,7,4,1,8,1]
+
+On thinking more clearly and trying to map to a pattern you already know, this seems to be actually like
+
+minimize the difference between two subsets in the array.
+
+So its a minimum subset sum difference problem at its core.
+
+
+Lets see how.
+
+Sum = 23
+The least we might get is 0. But 23 / 2 is 11.
+So we need to see how close we can get to 11?
+
+And thats the subset sum difference. The last value of True in the last iteration will be the difference.
+THE GOAL WAS ALWAYS TO FIND THE MINIMUM DIFFERENCE.
