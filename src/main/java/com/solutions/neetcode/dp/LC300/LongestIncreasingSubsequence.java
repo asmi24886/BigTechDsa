@@ -1,6 +1,9 @@
 package com.solutions.neetcode.dp.LC300;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class LongestIncreasingSubsequence {
 
@@ -22,6 +25,26 @@ public class LongestIncreasingSubsequence {
             }
 
             return Arrays.stream(dp).max().getAsInt();
+        }
+    }
+
+    class Solution {
+        public int lengthOfLIS(int[] nums) {
+
+            List<Integer> result = new ArrayList<>();
+
+            for(int value : nums) {
+
+                if(result.isEmpty() || result.getLast() < value) {
+                    result.add(value);
+                    continue;
+                }
+
+                int idx = Collections.binarySearch(result, value); // -insertion_point -1
+                if(idx < 0) result.set(-1*idx - 1, value);
+            }
+
+            return result.size();
         }
     }
 }
