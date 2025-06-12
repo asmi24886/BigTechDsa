@@ -1,12 +1,9 @@
 package com.solutions.adityaverma.dp.partition;
 
-import java.util.Arrays;
-import java.util.stream.IntStream;
-
-public class PalindromePartitioning {
+public class PalindromePartitioning2Recursive {
 
     public static void main(String[] args) {
-        new Solution().minCut("ab");
+        System.out.println(new Solution().minCut("ccdabafg"));
     }
 
     public static class Solution {
@@ -19,15 +16,20 @@ public class PalindromePartitioning {
 
             char [] arr = str.toCharArray();
             boolean [][] palindromeCache = new boolean [arr.length][arr.length];
-            int [] partitionDp = new int[arr.length];
+            int [][] partitionDp = new int[arr.length][arr.length];
 
+            initializeDpTable(partitionDp);
             buildPalindromeCache(arr, palindromeCache);
-            minPartition(arr, partitionDp, palindromeCache);
-//            System.out.println(Arrays.stream(palindromeCache).map(it -> IntStream.range(0, it.length).mapToObj(i -> it[i]).toList()).toList());
-//            System.out.println(Arrays.stream(partitionDp).boxed().toList());
-            return partitionDp[partitionDp.length - 1];
+            return minPartition(0, arr.length - 1, arr, partitionDp, palindromeCache);
         }
 
+        public void initializeDpTable(int [][] dp) {
+            for (int i = 0; i < dp.length; i++) {
+                for(int j = 0; j < dp.length; j++) {
+                    dp[i][j] = -1;
+                }
+            }
+        }
         public void buildPalindromeCache(char [] arr, boolean [][] palindromeDp) {
 
             for(int i = 0; i < arr.length; i++) {
@@ -49,20 +51,21 @@ public class PalindromePartitioning {
         }
 
         //Building the min dp table -> if j to i is palindrome then take the minimum of total number of partitions of rest of the string before palindrome + 1 and the current value stored for i
-        public void minPartition(char [] arr, int [] dp, boolean [][] palindromeCache) {
+        public int minPartition(int l, int r, char [] arr, int [][] dp, boolean [][] palindromeCache) {
 
-            for(int i = 0; i < arr.length; i++) {
+            if(l>=r) return 0;
+            if(dp[l][r] != -1) return dp[l][r];
+            if(palindromeCache[l][r]) return 0;
 
-                if(palindromeCache[0][i]) dp[i] = 0;
-                else {
-                    dp[i] = arr.length;
-                    for(int j = 1; j <= i; j++) {
-                        if(palindromeCache[j][i]) {
-                            dp[i] = Math.min(dp[i], dp[j-1] + 1); // j-1 will be atleast 0 or 1 at some point because same character comparison is a palindrome so there must be a palindrome
-                        }
-                    }
-                }
+            int minCut = Integer.MAX_VALUE;
+            for(int k = l; k < r; k++) {
+                int minCutFromLeft = minPartition(l, k, arr, dp, palindromeCache);
+                int minCutFromRight = minPartition(k+1, r, arr, dp, palindromeCache);
+                minCut = Math.min(minCut, minCutFromLeft + minCutFromRight + 1);
             }
+
+            dp[l][r] = minCut;
+            return minCut;
         }
 
     }
