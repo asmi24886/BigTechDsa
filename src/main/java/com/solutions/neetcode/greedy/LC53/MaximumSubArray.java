@@ -27,6 +27,7 @@ public class MaximumSubArray {
         }
     }
 
+    //Kadane's algo vvv imp
     public int maxSubArray(int[] nums) {
         int max = Integer.MIN_VALUE, current_sum = 0;
 
