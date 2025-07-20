@@ -10,6 +10,8 @@ public class SlidingWindowMedian {
     private int maxHeapSize = 0;
     private final int windowSize; // the size of the sliding window
 
+    //[1,3,-1,-3,5,3,6,7] / k = 3
+
     public SlidingWindowMedian(int k) {
         this.windowSize = k;
     }
