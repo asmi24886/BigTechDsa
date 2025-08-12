@@ -2,6 +2,7 @@ package com.solutions.neetcode.heap.LC480;
 
 import java.util.*;
 
+//VERY HARD
 class Solution {
     public class SlidingWindowMedian {
         private PriorityQueue<Integer> minHeap = new PriorityQueue<>(); // holds all the larger elements
