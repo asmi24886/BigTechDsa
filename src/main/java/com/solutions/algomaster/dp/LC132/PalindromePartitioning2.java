@@ -1,4 +1,4 @@
-package com.solutions.neetcode.dp.LC132;
+package com.solutions.algomaster.dp.LC132;
 
 public class PalindromePartitioning2 {
     //Recursive solution also present com.solutions.adityaverma.dp.partition.PalindromePartitioning2Recursive
