@@ -14,60 +14,65 @@ public class MergeKSortedLists {
     class Solution {
         public ListNode mergeKLists(ListNode[] lists) {
 
+            if(lists == null || lists.length == 0)
+                return null;
+
             if(lists.length == 1)
                 return lists[0];
 
-            ListNode head1= lists[0];
-
-
-            for(int i = 1; i < lists.length; i++) {
-                head1 = mergeSortedList(head1, lists[i]);
-            }
-
-            return head1;
+           return mergeSortedList(lists, 0, lists.length - 1);
         }
 
-        public ListNode mergeSortedList(ListNode head1, ListNode head2) {
+        public ListNode mergeSortedList(ListNode[] lists, int lo, int hi) {
 
-            if(head1 == null)
-                return head2;
+            if(lo == hi) {
+                return lists[lo];
+            }
 
-            if(head2 == null)
-                return head1;
+            int mid = lo + (hi - lo)/2;
+            ListNode leftMerged = mergeSortedList(lists, lo, mid);
+            ListNode rightMerged = mergeSortedList(lists, mid+1, hi);
 
-            ListNode node1 = head1;
-            ListNode node2 = head2;
+            return merge2SortedLists(leftMerged, rightMerged);
 
-            ListNode parent = null;
+        }
 
-            while(true) {
+        public ListNode merge2SortedLists(ListNode head1, ListNode head2) {
+            if(head1 == null) return head2;
+            if(head2 == null) return head1;
 
-                if(node2.val <= node1.val) {
-                    ListNode temp = node2;
-                    node2 = node2.next;
+            ListNode current = null;
 
-                    if(parent != null) {
-                        parent.next = temp;
-                    }
-                    else head1 = temp;
+            if(head1.val <= head2.val) {
+                current = head1;
+                head1 = head1.next;
+            }
+            else {
+                current = head2;
+                head2 = head2.next;
+            }
 
-                    temp.next = node1;
-                    parent = temp;
+
+            ListNode mergedHead = current;
+
+            while(head1 != null && head2 != null) {
+                if(head1.val <= head2.val) {
+                    current.next = head1;
+                    head1 = head1.next;
                 }
                 else {
-                    parent = node1;
-                    node1 = node1.next;
+                    current.next = head2;
+                    head2 = head2.next;
                 }
 
-                if(node1 == null) {
-                    parent.next = node2; //attach remaining nodes
-                    return head1;
-                }
-                else if(node2 == null) {
-                    return head1;
-                }
+                current = current.next;
             }
+
+            current.next = head1 == null? head2: head1;
+
+            return mergedHead;
         }
+
     }
     
      public class ListNode {
