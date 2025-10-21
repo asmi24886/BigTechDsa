@@ -36,7 +36,7 @@ public class ReverseNodesInKGroup {
                 }
 
                 ListNode nextHead = tail.next;
-                ListNode newHead = reverse(oldHead, nextHead);
+                ListNode newHead = reverse_with_tail(oldHead, nextHead);
                 if(reversedHead == null) reversedHead = newHead;
 
 
@@ -73,14 +73,36 @@ public class ReverseNodesInKGroup {
 
                 ListNode currentGroupHead = oldGroupHead.next;
                 ListNode currentGroupTail = tail.next;
-                ListNode reversedCurrentGroupHead = reverse(currentGroupHead, currentGroupTail);
+                ListNode reversedCurrentGroupHead = reverse_with_tail(currentGroupHead, currentGroupTail);
 
                 oldGroupHead.next = reversedCurrentGroupHead;
                 oldGroupHead = currentGroupHead;
             }
         }
 
-        ListNode reverse(ListNode head, ListNode end) {
+        public ListNode reverseKGroup_recursive(ListNode head, int k) {
+
+            ListNode current = head;
+            for(int i = 0; i < k; i++) {
+                if(current == null) return head;
+                current = current.next;
+            }
+
+            ListNode parent = null;
+            current = head;
+
+            for(int i = 0; i < k; i++) {
+                ListNode next = current.next;
+                current.next = parent;
+                parent = current;
+                current = next;
+            }
+
+            head.next = reverseKGroup_recursive(current, k); //current has the latest NEXT value
+            return parent;
+        }
+
+        ListNode reverse_with_tail(ListNode head, ListNode end) {
 
             ListNode parent = end;
             ListNode node = head;
