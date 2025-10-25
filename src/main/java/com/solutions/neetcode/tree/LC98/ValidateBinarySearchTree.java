@@ -1,6 +1,6 @@
-package com.solutions.neetcode.tree.LC1448;
+package com.solutions.neetcode.tree.LC98;
 
-public class GoodNodesInBinaryTree {
+public class ValidateBinarySearchTree {
     /**
      * Definition for a binary tree node.
      * public class TreeNode {
@@ -17,18 +17,22 @@ public class GoodNodesInBinaryTree {
      * }
      */
     class Solution {
-        public int goodNodes(TreeNode root) {
-            return dfs(root, root.val);
+        public boolean isValidBST(TreeNode root) {
+            return dfs(root, Long.MIN_VALUE, Long.MAX_VALUE);
         }
 
-        int dfs(TreeNode root, int maxVal) {
+        boolean dfs(TreeNode root, long minVal, long maxVal) {
             if (root == null)
-                return 0;
-            int maxUntilNow = Math.max(maxVal, root.val);
-            int childrenGoodNodeCount = dfs(root.left, maxUntilNow) + dfs(root.right, maxUntilNow);
-            if (root.val < maxVal)
-                return childrenGoodNodeCount;
-            return 1 + childrenGoodNodeCount;
+                return true;
+
+            if (minVal >= root.val || root.val >= maxVal)
+                return false;
+
+            boolean left = dfs(root.left, minVal, Math.min(root.val, maxVal));
+            boolean right = dfs(root.right, Math.max(minVal, root.val), maxVal);
+
+            return left && right;
+
         }
 
         class TreeNode {
