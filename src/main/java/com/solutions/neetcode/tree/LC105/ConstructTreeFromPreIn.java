@@ -1,84 +1,77 @@
 package com.solutions.neetcode.tree.LC105;
 
-import java.util.Arrays;
-import java.util.List;
+import java.util.HashMap;
 
 public class ConstructTreeFromPreIn {
-
-    public static void main(String[] args) {
-        int [] pre = {3,2,1,4};
-        int [] in = {1,2,3,4};
-        TreeNode treeNode = new Solution().buildTree(pre, in);
-        traverse(treeNode);
-    }
-
-    public static void traverse(TreeNode treeNode) {
-        if(treeNode == null) return;
-        traverse(treeNode.left);
-        System.out.println(treeNode.val);
-        traverse(treeNode.right);
-    }
 
     /**
      * Definition for a binary tree node.
      * public class TreeNode {
-     *     int val;
-     *     TreeNode left;
-     *     TreeNode right;
-     *     TreeNode() {}
-     *     TreeNode(int val) { this.val = val; }
-     *     TreeNode(int val, TreeNode left, TreeNode right) {
-     *         this.val = val;
-     *         this.left = left;
-     *         this.right = right;
-     *     }
+     * int val;
+     * TreeNode left;
+     * TreeNode right;
+     * TreeNode() {}
+     * TreeNode(int val) { this.val = val; }
+     * TreeNode(int val, TreeNode left, TreeNode right) {
+     * this.val = val;
+     * this.left = left;
+     * this.right = right;
+     * }
      * }
      */
-    static class Solution {
-        List<Integer> preorder;
-        List<Integer> inorder;
-        public TreeNode buildTree(int[] pre, int[] in) {
-            preorder = Arrays.stream(pre).boxed().toList();
-            inorder = Arrays.stream(in).boxed().toList();
-            return solve(0, preorder.size()-1, 0, preorder.size()-1);
+
+    class Solution {
+        int [] pre;
+        int [] in;
+        int pre_index = 0;
+        HashMap<Integer, Integer> map  = new HashMap<>();
+        public TreeNode buildTree(int[] preorder, int[] inorder) {
+            pre = preorder;
+            in = inorder;
+
+            for(int i =0; i < in.length; i++) {
+                map.put(in[i], i);
+            }
+            return buildTreeHelper(0, in.length - 1);
         }
 
-        //2,3,4 and 4,3,2
-        public TreeNode solve(int pre_idx_start, int pre_idx_end, int in_idx_start, int in_idx_end) {
-            //System.out.println(List.of(pre_idx_start, pre_idx_end, in_idx_start, in_idx_end));
-            if(pre_idx_start > pre_idx_end)
-                return null;
-            int curr_root = preorder.get(pre_idx_start);
-            int idx_of_curr_root_inorder = inorder.indexOf(curr_root);
+        // 12, 9, 8, 10, 11, 18, 17, 16, 19
+        // 8, 9, 10, 11, 12, 16, 17, 18, 19
+        public TreeNode buildTreeHelper(
+                int in_start, int in_end
+        ) {
+            if(in_start > in_end) return null;
+            TreeNode root = new TreeNode(pre[pre_index++]);
+            if(in_start == in_end) return root;
 
-            TreeNode node = new TreeNode();
-            node.val = curr_root;
+            int inorder_index = map.get(root.val);
 
-            if(idx_of_curr_root_inorder > in_idx_start) {
-                node.left = solve(
-                        pre_idx_start+1,
-                        pre_idx_start + idx_of_curr_root_inorder - in_idx_start,
-                        in_idx_start,
-                        idx_of_curr_root_inorder - 1
-                        );
-            }
+            root.left = buildTreeHelper(in_start, inorder_index - 1);
+            root.right = buildTreeHelper(inorder_index + 1, in_end);
 
-            if(idx_of_curr_root_inorder < in_idx_end) {
-                node.right = solve(
-                        pre_idx_start + idx_of_curr_root_inorder - in_idx_start + 1,
-                        pre_idx_end,
-                        idx_of_curr_root_inorder + 1,
-                        in_idx_end
-                );
-            }
+            return root;
 
-            return node;
         }
+
+        class TreeNode {
+            int val;
+            TreeNode left;
+            TreeNode right;
+
+            TreeNode() {
+            }
+
+            TreeNode(int val) {
+                this.val = val;
+            }
+
+            TreeNode(int val, TreeNode left, TreeNode right) {
+                this.val = val;
+                this.left = left;
+                this.right = right;
+            }
+        }
+
     }
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-    }
 }
