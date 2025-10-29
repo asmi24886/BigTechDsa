@@ -3,7 +3,7 @@ package com.solutions.neetcode.tree.LC297;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class SerializeDeserializeBinaryTree {
+public class SerializeDeserializeBinaryTreeBFS {
 
       class TreeNode {
           int val;
@@ -25,7 +25,7 @@ public class SerializeDeserializeBinaryTree {
             while (!queue.isEmpty()) {
                 TreeNode node = queue.poll();
                 if (node == null) {
-                    sb.append("null,");
+                    sb.append("-,");
                     continue;
                 }
                 sb.append(node.val).append(",");
@@ -52,7 +52,7 @@ public class SerializeDeserializeBinaryTree {
                 TreeNode parent = queue.poll();
 
                 // Left child
-                if (!values[i].equals("null")) {
+                if (!values[i].equals("-")) {
                     TreeNode left = new TreeNode(Integer.parseInt(values[i]));
                     parent.left = left;
                     queue.offer(left);
@@ -60,7 +60,7 @@ public class SerializeDeserializeBinaryTree {
                 i++;
 
                 // Right child
-                if (i < values.length && !values[i].equals("null")) {
+                if (i < values.length && !values[i].equals("-")) {
                     TreeNode right = new TreeNode(Integer.parseInt(values[i]));
                     parent.right = right;
                     queue.offer(right);
