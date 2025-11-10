@@ -1,4 +1,4 @@
-package com.solutions.neetcode.graph.LC286P;
+package com.solutions.neetcode.graph.LC286;
 
 import java.util.*;
 import java.util.stream.Stream;
