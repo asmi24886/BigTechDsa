@@ -32,8 +32,8 @@ public class ThreeSum {
 
                     int target = nums[i] + nums[j];
 
-                    if (count.getOrDefault(-1 * target, 0) > 0) {
-                        res.add(Arrays.asList(nums[i], nums[j], -1 * target));
+                    if (count.getOrDefault(-1  target, 0) > 0) {
+                        res.add(Arrays.asList(nums[i], nums[j], -1  target));
                     }
                 }
 
@@ -62,7 +62,7 @@ public class ThreeSum {
                     continue;
 
                 int l = pivot + 1, r = nums.length - 1;
-                int target = -1 * nums[pivot];
+                int target = -1  nums[pivot];
 
                 while (l < r) {
                     if (nums[l] + nums[r] > target) {

@@ -1,6 +1,6 @@
 package com.solutions.neetcode.heap.LC502;
 
-import java.util.*;
+import java.util.;
 
 public class IPO {
     public static void main(String[] args) {

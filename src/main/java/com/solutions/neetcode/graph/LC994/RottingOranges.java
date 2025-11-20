@@ -6,13 +6,13 @@ import java.util.Queue;
 
 public class RottingOranges {
 
-    /*
+    /
             [
             [2,1,1],
             [1,1,1],
             [0,1,2]
             ]
-     */
+     /
     class Solution {
         Queue<int []> queue = new LinkedList<>();
         List<int []> list = new LinkedList<>();

@@ -1,6 +1,6 @@
 package com.solutions.neetcode.heap.LC480;
 
-import java.util.*;
+import java.util.;
 
 //VERY HARD
 class Solution {

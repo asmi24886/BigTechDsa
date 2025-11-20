@@ -1,6 +1,6 @@
 package com.solutions.neetcode.stack.LC853;
 
-import java.util.*;
+import java.util.;
 
 public class CarFleet {
 
@@ -24,9 +24,9 @@ public class CarFleet {
                 }
 
                 int [] carMetric = stack.peek();
-                double timeOfLastFleet = (target * 1.0 - carMetric[0] * 1.0) / carMetric[1]; // distance / speed
+                double timeOfLastFleet = (target  1.0 - carMetric[0]  1.0) / carMetric[1]; // distance / speed
 
-                double timeOfCurrent = (target * 1.0 - sortedCars[i][0] * 1.0) / sortedCars[i][1];
+                double timeOfCurrent = (target  1.0 - sortedCars[i][0]  1.0) / sortedCars[i][1];
 
                 //this car can catch up
                 if(timeOfCurrent > timeOfLastFleet) {

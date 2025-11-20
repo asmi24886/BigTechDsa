@@ -1,6 +1,6 @@
 package com.solutions.neetcode.graph.LC286;
 
-import java.util.*;
+import java.util.;
 import java.util.stream.Stream;
 
 public class WallsAndGates {

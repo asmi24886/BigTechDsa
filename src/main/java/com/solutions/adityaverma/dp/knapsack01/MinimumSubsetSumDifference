@@ -12,7 +12,7 @@ So , 12 + 11 = 23
 We want to find all those subset sum upto 11 that can be achieved in the set
 
 We take the last True entry of the last row. Thats the closest to 11 that we can achieve.
-Here we can achieve 11. So min difference is (23 - 11) - 11 = 23 - 2*11 = 1
+Here we can achieve 11. So min difference is (23 - 11) - 11 = 23 - 211 = 1
 
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -25,6 +25,6 @@ equal partiion = 5
 TARGET sum is 5
 
 The best we can do is a target sum 3 along with 1 and 2 (cant do 4 and 5).
-So 10 - 2*3 = 4 is the min difference
+So 10 - 23 = 4 is the min difference
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

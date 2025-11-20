@@ -97,7 +97,7 @@ public class MergeTwoSortedLists {
     //Recursive
     public ListNode mergeSortedList_rec(ListNode head1, ListNode head2) {
 
-        /*
+        /
 
                 1,5,7
                 2,3,4,9
@@ -109,7 +109,7 @@ public class MergeTwoSortedLists {
                 | from list 2
                 () one of the list was non null while the other was null so stitched in full
 
-         */
+         /
         if(head1 == null) return head2;
         if(head2 == null) return head1;
 
@@ -124,10 +124,10 @@ public class MergeTwoSortedLists {
 
     //Use current pointer to append either list1 or list2
     public ListNode mergeSortedList_classic(ListNode head1, ListNode head2) {
-        /*
+        /
              1 3
              2 4
-         */
+         /
 
         if(head1 == null) return head2;
         if(head2 == null) return head1;
@@ -165,7 +165,7 @@ public class MergeTwoSortedLists {
 
     //list1 head always has lower value
     public ListNode mergeSortedList_swapping(ListNode head1, ListNode head2) {
-        /*
+        /
                 1| 3
                 2| 4
 
@@ -180,7 +180,7 @@ public class MergeTwoSortedLists {
                 null
 
                 break while loop
-         */
+         /
         if(head1 == null) return head2;
         if(head2 == null) return head1;
 

@@ -1,6 +1,6 @@
 package com.solutions.neetcode.graph.LC778;
 
-import java.util.*;
+import java.util.;
 
 public class SwimInRisingWater {
 

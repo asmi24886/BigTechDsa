@@ -22,7 +22,7 @@ public class ProductOfArrayExceptSelf {
                     answer[i] = 1;
                 }
                 else {
-                    answer[i] = memo * answer[i+1];
+                    answer[i] = memo  answer[i+1];
                 }
                 memo = nums[i];
             }
@@ -34,14 +34,14 @@ public class ProductOfArrayExceptSelf {
             nums[0] = 1;
             for(int i = 0; i < nums.length; i++) {
                 if(i > 0) {
-                    nums[0] = memo * nums[i - 1];
+                    nums[0] = memo  nums[i - 1];
                     memo = nums[i];
                     nums[i] = nums[0];
                 }
             }
             System.out.println(Arrays.stream(nums).boxed().toList());
             for(int i = 1; i < nums.length; i++) {
-                answer[i] = nums[i] * answer[i];
+                answer[i] = nums[i]  answer[i];
             }
 
             return answer;

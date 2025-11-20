@@ -1,7 +1,7 @@
 package com.solutions.neetcode.graph.LC269;
 
 import java.net.Inet4Address;
-import java.util.*;
+import java.util.;
 
 public class AlienDictionary {
 

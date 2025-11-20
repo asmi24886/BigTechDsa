@@ -5,15 +5,15 @@ Patience sort (actual solitaire game - https://www.youtube.com/watch?v=22s1xxRvy
 
 10
 9
-2 *
+2
 
 2 5
 
-2 3 *
+2 3
 
 2 7
 2 5 7
-2 3 7 *
+2 3 7
 
 10 101
 9 101
@@ -22,7 +22,7 @@ Patience sort (actual solitaire game - https://www.youtube.com/watch?v=22s1xxRvy
 2 3 101
 2 7 101
 2 5 7 101
-2 3 7 101 *
+2 3 7 101
 
 10 18
 9 18
@@ -34,9 +34,9 @@ Patience sort (actual solitaire game - https://www.youtube.com/watch?v=22s1xxRvy
 
 2 7 18
 2 5 7 18
-2 3 7 18 *
+2 3 7 18
 
-* Is always the best selection because we have a greater chance to create a greater subsequence
+ Is always the best selection because we have a greater chance to create a greater subsequence
 
 --------------------------
 so the algorithm is kind of -

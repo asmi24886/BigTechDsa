@@ -1,6 +1,6 @@
 package com.solutions.neetcode.arrayandhashing.LC347;
 
-import java.util.*;
+import java.util.;
 
 public class TopKFrequentElements {
 

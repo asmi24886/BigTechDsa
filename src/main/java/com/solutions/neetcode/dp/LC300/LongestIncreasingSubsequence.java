@@ -41,7 +41,7 @@ public class LongestIncreasingSubsequence {
                 }
 
                 int idx = Collections.binarySearch(result, value); // -insertion_point -1
-                if(idx < 0) result.set(-1*idx - 1, value);
+                if(idx < 0) result.set(-1idx - 1, value);
             }
 
             return result.size();

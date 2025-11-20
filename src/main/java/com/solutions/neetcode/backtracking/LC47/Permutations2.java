@@ -1,6 +1,6 @@
 package com.solutions.neetcode.backtracking.LC47;
 
-import java.util.*;
+import java.util.;
 
 //Alternate solution - https://www.youtube.com/watch?v=qhBVWf0YafA
 public class Permutations2 {

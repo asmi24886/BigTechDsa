@@ -10,7 +10,7 @@ class Solution {
 
         while(l != r) {
 
-            int water = Math.min(height[l], height[r]) * (r - l);
+            int water = Math.min(height[l], height[r])  (r - l);
             maxWater = Math.max(water, maxWater);
 
             if(l <= r) {

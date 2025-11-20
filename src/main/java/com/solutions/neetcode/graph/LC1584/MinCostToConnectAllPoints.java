@@ -1,6 +1,6 @@
 package com.solutions.neetcode.graph.LC1584;
 
-import java.util.*;
+import java.util.;
 
 //Good to also check out the optimal version of Prim's on neetcode
 public class MinCostToConnectAllPoints {

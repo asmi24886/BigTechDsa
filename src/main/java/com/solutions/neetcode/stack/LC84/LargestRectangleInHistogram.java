@@ -24,7 +24,7 @@ public class LargestRectangleInHistogram {
                         width = i - indexStack.peek() - 1;
                     }
 
-                    maxArea = Math.max(maxArea, heights[topIndex]*width);
+                    maxArea = Math.max(maxArea, heights[topIndex]width);
                 }
 
                 indexStack.push(i);
@@ -41,7 +41,7 @@ public class LargestRectangleInHistogram {
                     width = heights.length - indexStack.peek() - 1;
                 }
 
-                maxArea = Math.max(maxArea, heights[topIndex] * width);
+                maxArea = Math.max(maxArea, heights[topIndex]  width);
             }
             return maxArea;
         }

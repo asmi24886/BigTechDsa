@@ -1,6 +1,6 @@
 package com.solutions.neetcode.greedy.LC763;
 
-import java.util.*;
+import java.util.;
 
 public class PartitionLabels {
 

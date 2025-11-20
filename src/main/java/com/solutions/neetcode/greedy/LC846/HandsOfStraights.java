@@ -8,15 +8,15 @@ public class HandsOfStraights {
     public static void main(String [] args) {
         int [] arr = {1,2,3,6,2,3,4,7,8};
 
-        /**
-         * 1 - 1
-         * 2 - 2
-         * 3 - 2
-         * 4 - 1
-         * 6 - 1
-         * 7 - 1
-         * 8 - 1
-         */
+        /
+          1 - 1
+          2 - 2
+          3 - 2
+          4 - 1
+          6 - 1
+          7 - 1
+          8 - 1
+         /
         System.out.println(new Solution().isNStraightHand(arr, 3));
     }
 

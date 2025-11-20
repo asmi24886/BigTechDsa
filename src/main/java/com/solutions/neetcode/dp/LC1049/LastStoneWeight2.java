@@ -25,7 +25,7 @@ public class LastStoneWeight2 {
                 }
             }
 
-            return (totalSum - maxSumAchieved) - maxSumAchieved; //sum - 2 * maxTargetSum
+            return (totalSum - maxSumAchieved) - maxSumAchieved; //sum - 2  maxTargetSum
 
         }
     }

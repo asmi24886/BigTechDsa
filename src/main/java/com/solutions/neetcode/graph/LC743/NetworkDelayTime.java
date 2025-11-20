@@ -1,6 +1,6 @@
 package com.solutions.neetcode.graph.LC743;
 
-import java.util.*;
+import java.util.;
 
 //MODIFED DIJKSTRA
 public class NetworkDelayTime {

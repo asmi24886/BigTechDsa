@@ -15,7 +15,7 @@ public class FindTheDuplicateNumber {
             if(nums[Math.abs(idx)] - 1 < 0)
                 return Math.abs(idx);
 
-            nums[Math.abs(idx)] = nums[Math.abs(idx)] * -1;
+            nums[Math.abs(idx)] = nums[Math.abs(idx)]  -1;
         }
         return 0;
     }

@@ -2,16 +2,16 @@ package com.solutions.neetcode.linkedlist.LC25;
 
 // Difficult due to 4 pointer tracking
 public class ReverseNodesInKGroup {
-    /**
-     * Definition for singly-linked list.
-     * public class ListNode {
-     *     int val;
-     *     ListNode next;
-     *     ListNode() {}
-     *     ListNode(int val) { this.val = val; }
-     *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-     * }
-     */
+    /
+      Definition for singly-linked list.
+      public class ListNode {
+          int val;
+          ListNode next;
+          ListNode() {}
+          ListNode(int val) { this.val = val; }
+          ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+      }
+     /
 
     // WE TRACK 4 pointer
         // previous group head that became the previous tail

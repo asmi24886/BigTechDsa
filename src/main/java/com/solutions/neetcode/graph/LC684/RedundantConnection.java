@@ -1,6 +1,6 @@
 package com.solutions.neetcode.graph.LC684;
 
-import java.util.*;
+import java.util.;
 
 public class RedundantConnection {
     class Solution2 {
