@@ -1,6 +1,6 @@
 package com.solutions.neetcode.heap.LC1094;
 
-import java.util.;
+import java.util.*;
 
 public class CarPooling {
     class Solution {

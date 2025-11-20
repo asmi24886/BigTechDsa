@@ -1,13 +1,13 @@
 package com.solutions.neetcode.backtracking.LC47;
 
-import java.util.;
+import java.util.*;
 
 //Alternate solution - https://www.youtube.com/watch?v=qhBVWf0YafA
 public class Permutations2 {
 
     public static void main (String [] args) {
         Solution sol = new Solution();
-        int nums[] = {3, 0, 3, 3};
+        int[] nums = {3, 0, 3, 3};
         sol.permuteUnique(nums).forEach(System.out::println);
     }
 

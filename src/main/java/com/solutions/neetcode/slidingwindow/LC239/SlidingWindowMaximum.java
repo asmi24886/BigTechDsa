@@ -1,6 +1,6 @@
 package com.solutions.neetcode.slidingwindow.LC239;
 
-import java.util.;
+import java.util.*;
 
 // monotonic decreasing queue
 public class SlidingWindowMaximum {

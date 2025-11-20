@@ -1,6 +1,6 @@
 package com.solutions.neetcode.graph.LC787;
 
-import java.util.;
+import java.util.*;
 
 public class CheapestFlightsWithinKStops {
 
@@ -45,7 +45,7 @@ public class CheapestFlightsWithinKStops {
         }
     }
     // modified bellman ford
-    /
+    /*
     [[1,0,5],[2,1,5],[3,0,2],[1,3,2],[4,1,1],[2,4,1]]
 
     loop 1:
@@ -59,7 +59,7 @@ public class CheapestFlightsWithinKStops {
     loop 3:
     og = [10, 2, 0, 7, 1]
     tmp = [7, 2, 0, 7, 1] 9 gets updated instead of 7 for 3,0,2 if are checking old values and thats wrong
-     /
+     */
     class Solution2 {
         public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
 

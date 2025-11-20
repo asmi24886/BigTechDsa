@@ -11,8 +11,7 @@ public class JumpGame {
                 }
             }
 
-            if(last_jumpable_index == 0) return true;
-            return false;
+            return last_jumpable_index == 0;
         }
     }
 }

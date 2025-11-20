@@ -33,7 +33,7 @@ public class MatrixChainMultiplication {
                     for(int partition_index = index_left; partition_index < index_right; partition_index++) {
                         dp[index_left][index_right] = Math.min(
                                 dp[index_left][index_right],
-                                chain[index_left-1]chain[partition_index]chain[index_right]
+                                chain[index_left-1]*chain[partition_index]*chain[index_right]
                                 + dp[index_left][partition_index] + dp[partition_index+1][index_right]
                         );
                     }

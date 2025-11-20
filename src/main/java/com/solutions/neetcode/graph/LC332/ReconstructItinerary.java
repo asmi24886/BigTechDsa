@@ -1,6 +1,6 @@
 package com.solutions.neetcode.graph.LC332;
 
-import java.util.;
+import java.util.*;
 
 public class ReconstructItinerary {
 

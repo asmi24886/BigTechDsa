@@ -1,6 +1,6 @@
 package com.solutions.neetcode.graph.LC286;
 
-import java.util.;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class WallsAndGates {
@@ -100,10 +100,10 @@ public class WallsAndGates {
 
         private int findLeastDistance(int [][] grid, int row, int col, Set<String> visited) {
             if(row < 0 || row == grid.length)
-                return Integer.MAX_VALUE;;
+                return Integer.MAX_VALUE;
 
             if(col < 0 || col == grid[0].length)
-                return Integer.MAX_VALUE;;
+                return Integer.MAX_VALUE;
 
             if(grid[row][col] == -1 || visited.contains(row+"-"+col)) {
                 return Integer.MAX_VALUE;

@@ -1,6 +1,6 @@
 package com.solutions.neetcode.binarysearch.LC981;
 
-import java.util.;
+import java.util.*;
 
 public class TImeBasedKeyValueStore {
 
@@ -51,18 +51,11 @@ public class TImeBasedKeyValueStore {
         }
     }
 
-/
+/*
   Your TimeMap object will be instantiated and called as such:
   TimeMap obj = new TimeMap();
   obj.set(key,value,timestamp);
   String param_2 = obj.get(key,timestamp);
- /
-
-/
-  Your TimeMap object will be instantiated and called as such:
-  TimeMap obj = new TimeMap();
-  obj.set(key,value,timestamp);
-  String param_2 = obj.get(key,timestamp);
- /
+ */
 
 }

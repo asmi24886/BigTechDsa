@@ -1,6 +1,6 @@
 package com.solutions.neetcode.heap.LC621;
 
-import java.util.;
+import java.util.*;
 
 public class TaskScheduler {
 

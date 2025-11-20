@@ -7,7 +7,7 @@ public class SubTreeOfAnotherTree {
             if(root == null && subRoot == null) return false;
             if(root == null || subRoot == null) return false;
 
-            boolean areNodesEqual = isEqual(root, subRoot);;
+            boolean areNodesEqual = isEqual(root, subRoot);
             if(areNodesEqual) return true;
 
             return isSubtree(root.left, subRoot) || isSubtree(root.right, subRoot);

@@ -28,7 +28,7 @@ public class CourseSchedule2 {
             }
 
             for(int i = 0; i < SIZE; i++) {
-                if(state[i] == VISITED) continue;;
+                if(state[i] == VISITED) continue;
                 if(!dfs(i)) return new int []{};
             }
 

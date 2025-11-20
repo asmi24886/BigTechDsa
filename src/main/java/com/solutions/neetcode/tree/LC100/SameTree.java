@@ -11,8 +11,7 @@ public class SameTree {
             boolean leftCompare = isSameTree(p.left, q.left);
             boolean rightCompare = isSameTree(p.right, q.right);
 
-            if(leftCompare && rightCompare) return true;
-            return false;
+            return leftCompare && rightCompare;
         }
 
         class TreeNode {

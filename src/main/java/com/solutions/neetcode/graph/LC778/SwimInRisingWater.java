@@ -1,6 +1,6 @@
 package com.solutions.neetcode.graph.LC778;
 
-import java.util.;
+import java.util.*;
 
 public class SwimInRisingWater {
 
@@ -19,11 +19,7 @@ public class SwimInRisingWater {
                 return true;
             }
 
-            if(j < 0 || j == grid[0].length) {
-                return true;
-            }
-
-            return false;
+            return j < 0 || j == grid[0].length;
         }
 
         public int swimInWater(int[][] grid) {

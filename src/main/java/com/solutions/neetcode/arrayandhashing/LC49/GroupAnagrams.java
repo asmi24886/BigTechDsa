@@ -1,6 +1,6 @@
 package com.solutions.neetcode.arrayandhashing.LC49;
 
-import java.util.;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class GroupAnagrams {

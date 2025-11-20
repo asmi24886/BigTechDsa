@@ -2,10 +2,10 @@ package com.solutions.neetcode.tree.LC102;
 
 import com.sun.source.tree.Tree;
 
-import java.util.;
+import java.util.*;
 
 public class BinaryTreeLevelOrderTraversal {
-    /
+    /*
       Definition for a binary tree node.
       public class TreeNode {
           int val;
@@ -19,7 +19,7 @@ public class BinaryTreeLevelOrderTraversal {
               this.right = right;
           }
       }
-     /
+     */
     class Solution {
 
         public List<List<Integer>> levelOrder(TreeNode root) {

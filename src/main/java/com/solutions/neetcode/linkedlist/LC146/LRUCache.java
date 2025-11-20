@@ -12,9 +12,9 @@ class LRUCache {
         Node(int k, int v) { key = k; val = v; }
     }
 
-    private HashMap<Integer, Node> nodeMap;
+    private final HashMap<Integer, Node> nodeMap;
     private Node head, tail;
-    private int capacity;
+    private final int capacity;
 
     public LRUCache(int capacity) {
         this.capacity = capacity;

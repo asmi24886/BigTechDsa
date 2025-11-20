@@ -32,7 +32,7 @@ public class ReversePolishNotation {
         }
 
         public boolean isOperator(String s) {
-            if(s.equals("+") || s.equals("-") || s.equals("") || s.equals("/"))
+            if(s.equals("+") || s.equals("-") || s.equals("*") || s.equals("/"))
                 return true;
 
             return false;
@@ -45,8 +45,8 @@ public class ReversePolishNotation {
             else if(operator.equals("-")) {
                 return op2 - op1;
             }
-            else if(operator.equals("")) {
-                return op1   op2;
+            else if(operator.equals("*")) {
+                return op1 *  op2;
             }
             else if(operator.equals("/")) {
                 return op2 /  op1;

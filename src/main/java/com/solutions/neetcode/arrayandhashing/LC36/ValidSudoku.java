@@ -1,6 +1,6 @@
 package com.solutions.neetcode.arrayandhashing.LC36;
 
-import java.util.;
+import java.util.*;
 
 public class ValidSudoku {
     class Solution {
@@ -26,7 +26,7 @@ public class ValidSudoku {
                         return false;
 
                     // box check
-                    int boxIndex = (i / 3)  3 + (j / 3); //Imp
+                    int boxIndex = (i / 3) * 3 + (j / 3); //Imp
                     boxes.putIfAbsent(boxIndex, new HashSet<>());
                     if (!boxes.get(boxIndex).add(ch))
                         return false;
@@ -50,13 +50,13 @@ public class ValidSudoku {
                     if (
                         (rows[r] & (1 << val)) > 0 ||
                         (cols[c] & (1 << val)) > 0 ||
-                        (squares[(r / 3)  3 + (c / 3)] & (1 << val)) > 0) {
+                        (squares[(r / 3) * 3 + (c / 3)] & (1 << val)) > 0) {
                             return false;
                         }
 
                     rows[r] |= (1 << val);
                     cols[c] |= (1 << val);
-                    squares[(r / 3)  3 + (c / 3)] |= (1 << val);
+                    squares[(r / 3) * 3 + (c / 3)] |= (1 << val);
                 }
             }
             return true;

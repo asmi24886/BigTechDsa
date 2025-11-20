@@ -1,13 +1,13 @@
 package com.solutions.neetcode.heap.LC480;
 
-import java.util.;
+import java.util.*;
 
 //VERY HARD
 class Solution {
     public class SlidingWindowMedian {
-        private PriorityQueue<Integer> minHeap = new PriorityQueue<>(); // holds all the larger elements
-        private PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder()); // holds the smaller elements, reversed to act as a max-heap
-        private Map<Integer, Integer> countMap = new HashMap<>(); // keeps track of the number of instances a number has been delayed for removal
+        private final PriorityQueue<Integer> minHeap = new PriorityQueue<>(); // holds all the larger elements
+        private final PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder()); // holds the smaller elements, reversed to act as a max-heap
+        private final Map<Integer, Integer> countMap = new HashMap<>(); // keeps track of the number of instances a number has been delayed for removal
         private int minHeapSize = 0;
         private int maxHeapSize = 0;
         private final int windowSize; // the size of the sliding window

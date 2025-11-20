@@ -2,7 +2,7 @@ package com.solutions.neetcode.arrayandhashing.LC217;
 
 import java.util.HashMap;
 
-/ https://leetcode.com/problems/contains-duplicate/ /
+// https://leetcode.com/problems/contains-duplicate/
 public class ContainsDuplicate {
 
     public static void main(String[] args) {

@@ -1,6 +1,6 @@
 package com.solutions.neetcode.graph.LC207;
 
-import java.util.;
+import java.util.*;
 
 public class CourseSchedule {
     class Solution {
@@ -91,10 +91,7 @@ public class CourseSchedule {
                 }
             }
 
-            if(processed != SIZE) {
-                return false;
-            }
-            return true;
+            return processed == SIZE;
         }
     }
 }
