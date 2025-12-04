@@ -5,13 +5,13 @@ import java.util.List;
 
 public class PacificAtlanticWaterFlow {
 
-    /
+    /*
             [
             [1,2,3],
             [8,9,4],
             [7,6,5]
             ]
-     /
+     */
     class Solution {
         int [][] heights;
         boolean [][] result_p, result_a;

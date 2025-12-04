@@ -14,9 +14,9 @@ public class PerfectSquares {
 
             for(int i = 1; i <= x; i++) {
 
-                for(int j = ii; j<=n; j++) {
+                for(int j = i*i; j<=n; j++) {
 
-                    dp[j] = Math.min(dp[j - ii] + 1, dp[j]);
+                    dp[j] = Math.min(dp[j - i*i] + 1, dp[j]);
                 }
             }
 

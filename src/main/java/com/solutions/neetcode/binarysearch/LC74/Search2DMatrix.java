@@ -50,7 +50,7 @@ public class Search2DMatrix {
     public boolean searchMatrix(int[][] matrix, int target) {
 
         int l = 0;
-        int r = (matrix.length  matrix[0].length) - 1;
+        int r = (matrix.length * matrix[0].length) - 1;
         int mid = 0;
 
         while(l <= r) {

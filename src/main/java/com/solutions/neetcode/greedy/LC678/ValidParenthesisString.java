@@ -11,7 +11,7 @@ public class ValidParenthesisString {
     static class Solution {
 
 
-        /
+        /*
             The idea:
             if we encounter a ( then leftBrace = existing count of leftBrace + 1
             if we encounter a ) then leftBrace = existing count of leftBrace - 1
@@ -26,7 +26,7 @@ public class ValidParenthesisString {
 
             This solution is very non intuitive. Maybe memorize and implement whereever possible
 
-         /
+         */
         public boolean checkValidString(String s) {
 
             char [] chars = s.toCharArray();
