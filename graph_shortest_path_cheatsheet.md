@@ -29,7 +29,7 @@ Start with these questions:
    - Yes → Use Bellman-Ford
 
 2. Is it a DAG?
-   - Yes → Use Topological Sort + DP (fastest for weighted DAGs)
+   - Yes → Use Topological Sort + DP (fastest for weighted DAGs); *Kahn's Algorithm useful*
 
 3. Unweighted?
    - Yes → Always use BFS
