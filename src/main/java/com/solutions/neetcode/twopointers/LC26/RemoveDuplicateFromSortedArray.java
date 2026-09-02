@@ -1,4 +1,4 @@
-package com.solutions.neetcode.arrayandhashing.LC26;
+package com.solutions.neetcode.twopointers.LC26;
 
 public class RemoveDuplicateFromSortedArray {
     class Solution {
