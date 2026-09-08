@@ -4,58 +4,37 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Subset {
-
-    public static void main(String [] args) {
-        SolutionBacktrack sol = new SolutionBacktrack();
-        int [] nums = {1,2,3};
-        List<List<Integer>> result = sol.subsets(nums);
-        result.forEach(System.out::println);
-    }
-
-    static class SolutionBacktrack {
+    class Solution {
         public List<List<Integer>> subsets(int[] nums) {
-            List<List<Integer>> result = new ArrayList<>();
-            result.add(new ArrayList<>());
-            if(nums.length == 0) return result;
-
-            constructSubset(0, nums, new ArrayList<>(), result);
-
-            return result;
+            return backtrack(nums, 0, new ArrayList<>(), new ArrayList<>());
         }
 
-        public void constructSubset(int idx, int [] nums, List<Integer> solution, List<List<Integer>> result) {
-            if(idx == nums.length) {
-                result.add(new ArrayList<>(solution));
+        private List<List<Integer>> backtrack(int [] nums, int i, List<Integer> path, List<List<Integer>> res) {
+            res.add(new ArrayList<>(path));
+
+            for(int j = i; j < nums.length; j++) {
+                path.add(nums[j]);
+                backtrack(nums, j+1, path, res);
+                path.removeLast();
+            }
+
+            return res;
+        }
+
+        void backtrack2(int[] nums, int i, List<Integer> path, List<List<Integer>> res) {
+            if (i == nums.length) {              // base case: decided for every element
+                res.add(new ArrayList<>(path));
                 return;
             }
 
-            solution.add(nums[idx]);
-            constructSubset(idx+1, nums, solution, result);
+            // Choice 1: DON'T take nums[i]
+            backtrack(nums, i + 1, path, res);
 
-            solution.removeLast();
-            constructSubset(idx+1, nums, solution, result);
+            // Choice 2: TAKE nums[i]
+            path.add(nums[i]);
+            backtrack(nums, i + 1, path, res);
+            path.remove(path.size() - 1);        // undo
         }
     }
 
-    static class Solution {
-        public List<List<Integer>> subsets(int[] nums) {
-            List<List<Integer>> result = new ArrayList<>();
-            result.add(new ArrayList<>());
-            if(nums.length == 0) return result;
-
-            for(int i = 0; i < nums.length; i++) {
-                constructSubset(nums[i], result);
-            }
-            return result;
-        }
-
-        public void constructSubset(int num, List<List<Integer>> result) {
-            int size = result.size();
-            for(int i = 0; i < size; i++) {
-                List<Integer> tempList = new ArrayList<>(result.get(i));
-                tempList.add(num);
-                result.add(tempList);
-            }
-        }
-    }
 }
