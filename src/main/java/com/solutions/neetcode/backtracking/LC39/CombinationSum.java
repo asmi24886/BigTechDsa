@@ -1,47 +1,39 @@
 package com.solutions.neetcode.backtracking.LC39;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class CombinationSum {
-
-    public static void main(String[] args) {
-
-        Solution solution = new Solution();
-
-        int [] nums1 = {2,3,6,7};
-        int [] nums2 = {2,3,5};
-        int [] nums3 = {2};
-        solution.combinationSum(nums1, 7).forEach(System.out::println);
-        System.out.println("============================================");
-        solution.combinationSum(nums2, 8).forEach(System.out::println);
-        System.out.println("============================================");
-        solution.combinationSum(nums3, 1).forEach(System.out::println);
-    }
-    static class Solution {
+    class Solution {
         public List<List<Integer>> combinationSum(int[] nums, int target) {
-            List<List<Integer>> result = new ArrayList<>();
-            if(nums.length == 0) return result;
-
-            backtrack(0, nums, new ArrayList<>(), result, 0, target);
-
-            return result;
+            return backtrack(nums, target, 0, new ArrayList<>(), 0, new ArrayList<>());
         }
 
-        public void backtrack(int idx, int [] nums, List<Integer> solution, List<List<Integer>> result, int currentSum, int target) {
-            if(currentSum == target) {
-                result.add(new ArrayList<>(solution));
-                return;
-            }
-            else if(currentSum > target || idx == nums.length) {
-                return;
+        private List<List<Integer>> backtrack(
+                int [] nums,
+                int target,
+                int i,
+                List<Integer> path,
+                int sum,
+                List<List<Integer>> result
+        ) {
+
+            if(sum == target) {
+                result.add(new ArrayList<>(path));
+                return result;
             }
 
-            solution.add(nums[idx]);
-            backtrack(idx, nums, solution, result, currentSum + nums[idx], target);
+            if(i == nums.length || sum > target) {
+                return result;
+            }
 
-            solution.removeLast();
-            backtrack(idx+1, nums, solution, result, currentSum, target);
+            for(int j = i; j < nums.length; j++) {
+
+                path.add(nums[j]);
+                backtrack(nums, target, j, path, sum+nums[j], result);
+                path.removeLast();
+            }
+
+            return result;
         }
     }
 }
